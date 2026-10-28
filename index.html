@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <div class="icon">🔐</div>
+    <h1>Smart Password Generator</h1>
+    <p class="subtitle">Create a strong password in seconds.</p>
+
+    <section class="password-box">
+      <input
+        type="text"
+        id="password"
+        placeholder="Your password appears here"
+        readonly
+        aria-label="Generated password"
+      />
+      <button id="copyBtn" class="copy-btn" type="button">
+        Copy
+      </button>
+    </section>
+
+    <div class="strength-row">
+      <span>Password strength</span>
+      <span id="strengthText">Not generated</span>
+    </div>
+    <div class="strength-track">
+      <div id="strengthBar"></div>
+    </div>
+
+    <section class="settings">
+      <div class="length-heading">
+        <label for="length">Password Length</label>
+        <span id="lengthValue">16</span>
+      </div>
+
+      <input
+        type="range"
+        id="length"
+        min="8"
+        max="64"
+        value="16"
+      />
+
+      <h3>Include characters</h3>
+
+      <label class="option">
+        <input type="checkbox" id="uppercase" checked />
+        <span>Uppercase letters (A-Z)</span>
+      </label>
+
+      <label class="option">
+        <input type="checkbox" id="lowercase" checked />
+        <span>Lowercase letters (a-z)</span>
+      </label>
+
+      <label class="option">
+        <input type="checkbox" id="numbers" checked />
+        <span>Numbers (0-9)</span>
+      </label>
+
+      <label class="option">
+        <input type="checkbox" id="symbols" checked />
+        <span>Special symbols (!@#$...)</span>
+      </label>
+
+      <p id="error" role="alert"></p>
+
+      <button id="generateBtn" class="generate-btn" type="button">
+        Generate Password
+      </button>
+    </section>
+
+    <p class="footer">Your password is generated locally in your browser.</p>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite">
+    Password copied successfully!
+  </div>
+</body>
+</html>
